@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prak SIGWEB M4 No.5</title>
+</head>
+<body>
+
+<h2>Bilangan Fibonacci</h2>
+    <input type="number" id="fibonacci">
+    <button onclick="bilanganFibonacci()">Tampilkan</button>
+    <p id="outputFibonacci"></p>
+    
+<script>
+function bilanganFibonacci() {
+            let angka = parseInt(document.getElementById("fibonacci").value);
+            let hasil = "0 1 ";
+            let a = 0, b = 1, next;
+            for (let i = 2; i < angka; i++) {
+                next = a + b;
+                hasil += next + " ";
+                a = b;
+                b = next;
+            }
+            document.getElementById("outputFibonacci").innerHTML = hasil;
+        }
+</script>
+
+</body>
+</html>
+
+

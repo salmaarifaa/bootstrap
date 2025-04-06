@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prak SIGWEB M4 No.2</title>
+</head>
+<body>
+
+<h1>Validasi Input</h1>
+<p>Masukkan nama, password dan alamat email anda:</p>
+
+Nama: <input id="nama" type="text"> <br>
+Password : <input id="password" type="password"> <br>
+E-mail : <input id="email" type="text"> <br>
+<button onclick="validasiPassword()">Klik</button>
+<p id="outputUmur"></p>
+
+<script>
+function validasiPassword() {
+            let password = document.getElementById("password").value;
+            if (password !== "sss") {
+                alert("Password salah!");
+            } else {
+                alert("Password benar!");
+            }
+        }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prak SIGWEB M4 No.4</title>
+</head>
+<body>
+
+<h2>Bilangan Prima</h2>
+    <input type="number" id="prima">
+    <button onclick="bilanganPrima()">Tampilkan</button>
+    <p id="outputPrima"></p>
+    
+<script>
+function bilanganPrima() {
+            let angka = parseInt(document.getElementById("prima").value);
+            let hasil = "";
+            for (let i = 2; i <= angka; i++) {
+                let prima = true;
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        prima = false;
+                        break;
+                    }
+                }
+                if (prima) hasil += i + " ";
+            }
+            document.getElementById("outputPrima").innerHTML = hasil;
+        }
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Gallery</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #000;
+            background-color: white;
+        }
+
+        /* Header */
+        .header {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Content */
+        .content {
+            display: flex;
+            padding: 20px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 20%;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #ddd;
+        }
+
+        /* Main Content */
+        .main {
+            width: 80%;
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .text {
+            width: 60%;
+            padding-right: 20px;
+        }
+
+        .image {
+            width: 40%;
+        }
+
+        .image img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>City Gallery</h1>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <ul>
+                    <li onclick="showCity('London')">London</li>
+                    <li onclick="showCity('Paris')">Paris</li>
+                    <li onclick="showCity('Tokyo')">Tokyo</li>
+                </ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main">
+                <div class="text">
+                    <h2 id="city-title">London</h2>
+                    <p id="city-description">
+                    London is the capital city of England. 
+                    It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.
+                </p>
+                <p id="city-info">
+                    Standing on the River Thames, London has been a major settlement for two millennia, 
+                    its history going back to its founding by the Romans, who named it Londinium.
+                </p>
+                </div>
+                <div class="image">
+                    <img id="city-image" src="https://www.hipwee.com/wp-content/uploads/2018/03/hipwee-73295-640x360-london-skyline-ns-5.jpg" alt="Gambar Bekasi">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Copyright @Salma Arifa Tsani</p>
+        </div>
+    </div>
+
+    <script>
+        function showCity(city) {
+            let title = document.getElementById("city-title");
+            let description = document.getElementById("city-description");
+            let info = document.getElementById("city-info");
+            let image = document.getElementById("city-image");
+
+            if (city === "London") {
+                title.innerHTML = "London";
+                description.innerHTML = "London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.";
+                info.innerHTML = "Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.";
+                image.src = "https://www.hipwee.com/wp-content/uploads/2018/03/hipwee-73295-640x360-london-skyline-ns-5.jpg";
+                image.alt = "Gambar London";
+            } 
+            else if (city === "Paris") {
+                title.innerHTML = "Paris";
+                description.innerHTML = "Paris is the capital city of France. It is known as the 'City of Light' and is famous for its art, fashion, gastronomy, and culture.";
+                info.innerHTML = "The Eiffel Tower, the Louvre Museum, and the Notre-Dame Cathedral are some of its most famous landmarks.";
+                image.src = "https://media.istockphoto.com/id/1345426734/id/foto/menara-eiffel-paris-sungai-seine-sunset-senja-perancis.jpg?s=612x612&w=0&k=20&c=Wz_HzYMAGEqzHvtMUffcWePt4gOvCdcDPE8S-TAtNQI=";
+                image.alt = "Gambar Paris";
+            } 
+            else if (city === "Tokyo") {
+                title.innerHTML = "Tokyo";
+                description.innerHTML = "Tokyo is the capital city of Japan. It is a bustling metropolis blending modern technology with traditional culture.";
+                info.innerHTML = "From the historic temples of Asakusa to the neon-lit streets of Shibuya, Tokyo offers a unique blend of past and future.";
+                image.src = "https://asset.kompas.com/crops/lR1XtczxeZttRwH3750i9YPhBJw=/0x0:1000x667/1200x800/data/photo/2018/05/23/4081543869.jpg";
+                image.alt = "Gambar Tokyo";
+            }
+        }
+    </script>
+
+</body>
+</html>

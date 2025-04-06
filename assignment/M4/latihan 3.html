@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prak SIGWEB M4 No.3</title>
+</head>
+<body>
+
+<h1>Cek Kategori Usia</h1>
+<p>Masukkan nama dan umur anda:</p>
+Nama : <input id="nama" type="text"><br>
+Umur : <input id="umur">
+<button onclick="validasiNamaUmur()">Cek</button>
+    <p id="outputUmur"></p>
+
+<script>
+ function validasiNamaUmur() {
+            let nama = document.getElementById("nama").value;
+            let umur = parseInt(document.getElementById("umur").value);
+            if (nama === "") {
+                alert("Isikan nama!!");
+                return;
+            }
+            let kategori;
+            if (umur < 0) kategori = "Anda Game Over";
+            else if (umur < 5) kategori = "Anda masih bayi";
+            else if (umur <= 15) kategori = "Anda masih anak-anak";
+            else if (umur <= 30) kategori = "Anda masih remaja";
+            else if (umur <= 60) kategori = "Anda sudah dewasa";
+            else kategori = "Anda sudah lanjut usia";
+            
+            document.getElementById("outputUmur").innerHTML = kategori;
+        }
+</script>
+
+</body>
+</html>
+
+

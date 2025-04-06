@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prak SIGWEB M4 No.1</title>
+</head>
+<body>
+<h1>Hitung faktorial dari input</h1>
+<h2>Masukkan sembarang angka</h2>
+    <input type="number" id="faktorial">
+    <button onclick="hitungFaktorial()">click</button>
+    <p id="outputFaktorial"></p>
+    
+<script>
+        function hitungFaktorial() {
+            let angka = document.getElementById("faktorial").value;
+            let hasil = 1;
+            if (angka < 0) {
+                document.getElementById("outputFaktorial").innerHTML = "Masukkan angka yang valid!";
+                return;
+            }
+            for (let i = 1; i <= angka; i++) {
+                hasil *= i;
+            }
+            document.getElementById("outputFaktorial").innerHTML = `angka faktorial dari ${angka} adalah: ${hasil}`;
+        }
+</script>
+
+</body>
+</html>
+
+
